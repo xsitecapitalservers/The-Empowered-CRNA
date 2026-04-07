@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wealth Clinic | The Empowered CRNA</title>
+  <meta name="description" content="The Wealth Clinic — a free monthly webinar for CRNAs. April 21st at 6PM ET: The Side Income Playbook — What Actually Works for Busy CRNAs, featuring Derrick Murray CFP®." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Wealth Clinic | Free Webinar for CRNAs — April 21" />
+  <meta property="og:description" content="The Side Income Playbook — What Actually Works for Busy CRNAs. Reserve your free seat." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────── */
+    :root {
+      --carbon:      #181e22;
+      --petrol:      #1B5060;
+      --teal:        #2A9090;
+      --teal-lt:     #6dcfcf;
+      --amber:       #E8A830;
+      --warm-white:  #F5F2EE;
+      --warm-white2: #EDEAE5;
+      --text-primary:   #1A1C1E;
+      --text-secondary: #4A5058;
+      --text-muted:     #7A8290;
+      --glass-bg:        rgba(255,255,255,0.55);
+      --glass-bg-strong: rgba(255,255,255,0.75);
+      --glass-border:    rgba(255,255,255,0.82);
+      --glass-shadow:    0 8px 32px rgba(27,80,96,0.10), 0 1.5px 4px rgba(0,0,0,0.05);
+      --glass-blur:      blur(20px) saturate(180%);
+      --r-sm: 12px; --r-md: 20px; --r-lg: 32px; --r-xl: 48px;
+      --sp: clamp(64px, 8vw, 100px);
+    }
+
+    /* ── RESET ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── LAYOUT ─────────────────────────────────── */
+    .container { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 60px); }
+    .section { padding-block: var(--sp); }
+
+    /* ── TYPE ───────────────────────────────────── */
+    .label { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 14px; }
+    .label-dark { color: var(--teal); }
+    h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .heading-xl { font-size: clamp(40px, 6.5vw, 84px); font-weight: 800; line-height: 1.04; letter-spacing: -0.02em; }
+    .heading-lg { font-size: clamp(30px, 4vw, 54px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+    .heading-md { font-size: clamp(22px, 2.8vw, 36px); font-weight: 700; line-height: 1.2; }
+    .heading-sm { font-size: clamp(18px, 1.8vw, 24px); font-weight: 700; line-height: 1.3; }
+    .body-lg { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; }
+    .body-md { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.7; }
+    .text-muted { color: var(--text-muted); }
+    .text-secondary { color: var(--text-secondary); }
+    .text-white { color: #fff; }
+    .text-amber { color: var(--amber); }
+    .text-teal { color: var(--teal-lt); }
+    .center { text-align: center; }
+
+    /* ── GLASS ──────────────────────────────────── */
+    .glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--r-md); box-shadow: var(--glass-shadow); }
+
+    /* ── BUTTONS ────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 32px; border-radius: 100px; font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease; border: none; white-space: nowrap; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amber { background: var(--amber); color: var(--carbon); box-shadow: 0 4px 24px rgba(232,168,48,.38); }
+    .btn-amber:hover { background: #f0b93a; box-shadow: 0 8px 36px rgba(232,168,48,.5); }
+    .btn-glass-light { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.22); color: #fff; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .btn-glass-light:hover { background: rgba(255,255,255,0.2); }
+    .btn-petrol { background: var(--petrol); color: #fff; box-shadow: 0 4px 20px rgba(27,80,96,.3); }
+    .btn-petrol:hover { box-shadow: 0 8px 32px rgba(27,80,96,.45); }
+
+    /* ── NAV ────────────────────────────────────── */
+    #nav { position: fixed; top: 12px; left: 0; right: 0; z-index: 100; padding-inline: clamp(12px, 3vw, 40px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin-inline: auto; padding: 12px clamp(16px, 3vw, 32px); background: rgba(245,242,238,0.88); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,0.82); border-radius: 999px; box-shadow: 0 4px 24px rgba(27,80,96,.08); transition: all .3s ease; }
+    #nav.scrolled .nav-inner { background: rgba(245,242,238,0.96); box-shadow: 0 6px 32px rgba(27,80,96,.14); }
+    .nav-logo img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-back { font-size: 13px; font-weight: 500; color: var(--text-secondary); transition: color .2s; }
+    .nav-back:hover { color: var(--petrol); }
+    .nav-right .btn { padding: 10px 22px; font-size: 14px; }
+
+    /* ── HERO ───────────────────────────────────── */
+    #hero { min-height: 100svh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px; background: var(--carbon); }
+    .hero-bg { position: absolute; inset: 0; background:
+      radial-gradient(ellipse 65% 60% at 80% 10%, rgba(42,144,144,.20) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 10% 90%, rgba(232,168,48,.14) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 70% at 40% 50%, rgba(27,80,96,.28) 0%, transparent 70%),
+      #181e22;
+      z-index: 0;
+    }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none; }
+    .orb-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(42,144,144,.18), transparent 70%); top: -200px; right: -150px; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,168,48,.10), transparent 70%); bottom: -100px; left: -100px; }
+    .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 60px); padding-block: 60px 80px; }
+
+    /* Event chip row */
+    .event-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .event-chip { display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    .chip-amber { background: rgba(232,168,48,.15); border: 1px solid rgba(232,168,48,.35); color: var(--amber); }
+    .chip-teal  { background: rgba(42,144,144,.14); border: 1px solid rgba(42,144,144,.32); color: var(--teal-lt); }
+    .chip-white { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.65); }
+    .chip-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.85); }
+    }
+
+    .hero-eyebrow { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 20px; }
+    .hero-title { color: #fff; margin-bottom: 12px; }
+    .hero-title .accent { color: var(--teal-lt); }
+    .hero-title .amber { color: var(--amber); }
+    .hero-topic { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2.2vw, 26px); font-style: italic; font-weight: 500; color: rgba(255,255,255,.65); margin-bottom: 32px; line-height: 1.45; border-left: 3px solid var(--amber); padding-left: 16px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    /* Hero form card */
+    .hero-form-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--r-lg); padding: 36px 32px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    .hero-form-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .hero-form-card p { font-size: 14px; color: rgba(255,255,255,.5); margin-bottom: 22px; }
+    .fc-wrap { width: 100%; overflow: hidden; }
+    .fc-wrap > div { max-width: 100% !important; }
+
+    /* ── DIVIDER ────────────────────────────────── */
+    .divider-band { background: linear-gradient(135deg, var(--petrol) 0%, var(--teal) 100%); padding: 32px 0; }
+    .stats-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+    .stat-item { text-align: center; padding: 0 40px; border-right: 1px solid rgba(255,255,255,.18); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; color: #fff; line-height: 1; }
+    .stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.6); letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── WHAT YOU'LL LEARN ──────────────────────── */
+    #learn { background: var(--warm-white2); }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 52px; }
+    .learn-list { display: flex; flex-direction: column; gap: 20px; }
+    .learn-item { display: flex; gap: 16px; align-items: flex-start; }
+    .learn-icon { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--petrol), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .learn-text strong { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; display: block; color: var(--text-primary); margin-bottom: 4px; }
+    .learn-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    .learn-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .learn-quote-card { padding: 32px; }
+    .learn-quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 64px; line-height: .7; color: var(--amber); font-weight: 900; display: block; margin-bottom: 12px; }
+    .learn-quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px, 1.8vw, 22px); font-style: italic; font-weight: 600; color: var(--petrol); line-height: 1.5; }
+    .learn-event-card { background: linear-gradient(135deg, var(--petrol) 0%, #0f3240 100%); border-radius: var(--r-md); padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .learn-event-row { display: flex; align-items: center; gap: 12px; }
+    .learn-event-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .learn-event-icon svg { width: 18px; height: 18px; stroke: var(--teal-lt); fill: none; stroke-width: 2; }
+    .learn-event-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+    .learn-event-value { font-size: 15px; font-weight: 600; color: #fff; margin-top: 2px; }
+
+    /* ── SPEAKER ────────────────────────────────── */
+    #speaker { background: var(--warm-white); }
+    .speaker-grid { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: start; margin-top: 52px; }
+    .speaker-photo-wrap { position: relative; }
+    .speaker-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: var(--r-lg); box-shadow: 0 24px 64px rgba(27,80,96,.2); }
+    .speaker-badge { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); background: var(--amber); color: var(--carbon); padding: 10px 22px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 6px 24px rgba(232,168,48,.4); }
+    .speaker-name { font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.05; color: var(--text-primary); margin-bottom: 6px; }
+    .speaker-title { font-size: 15px; font-weight: 500; color: var(--teal); margin-bottom: 24px; }
+    .speaker-creds { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .speaker-cred { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(27,80,96,.08); border: 1px solid rgba(27,80,96,.15); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--petrol); }
+    .speaker-bio { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+    .speaker-bio p + p { margin-top: 14px; }
+    .speaker-accolades { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .accolade { display: flex; gap: 12px; align-items: flex-start; }
+    .accolade-star { color: var(--amber); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+    .accolade-text { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+    .accolade-text strong { color: var(--text-primary); }
+
+    /* ── CTA BAND ───────────────────────────────── */
+    .cta-band { background: linear-gradient(135deg, #181e22 0%, #1B5060 100%); padding: clamp(56px, 7vw, 96px) 0; position: relative; overflow: hidden; }
+    .cta-band::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(42,144,144,.15), transparent 70%); pointer-events: none; }
+    .cta-band::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,168,48,.1), transparent 70%); pointer-events: none; }
+    .cta-band-inner { position: relative; z-index: 1; text-align: center; }
+    .cta-band h2 { color: #fff; margin-bottom: 14px; }
+    .cta-band p { color: rgba(255,255,255,.55); font-size: clamp(15px, 1.4vw, 18px); max-width: 520px; margin: 0 auto 36px; }
+    .cta-band-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer { background: #111518; padding: 32px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo img { height: 24px; width: auto; opacity: .7; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.4); transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.25); }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .speaker-grid { grid-template-columns: 1fr; }
+      .speaker-photo-wrap { max-width: 320px; margin-inline: auto; }
+      .stat-item { padding: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .stats-row { gap: 24px; }
+      .stat-item { border-right: none; padding: 0; }
+      .event-chips { gap: 8px; }
+      .hero-form-card { padding: 28px 20px; }
+    }
+
+    /* ── REVEAL ANIMATION ───────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .12s; }
+    .d2 { transition-delay: .24s; }
+    .d3 { transition-delay: .36s; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav id="nav" role="navigation" aria-label="Page navigation">
+  <div class="nav-inner">
+    <a href="https://empowered-crna.onrender.com" class="nav-logo" aria-label="The Empowered CRNA – Home">
+      <img src="assets/images/CRNA-LOGO-03@3x.png" alt="The Empowered CRNA logo" />
+    </a>
+    <div class="nav-right">
+      <a href="https://empowered-crna.onrender.com" class="nav-back">← Back to Main Site</a>
+      <a href="#register" class="btn btn-amber" style="padding:10px 22px;font-size:14px;">Reserve My Spot</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-orb orb-1" aria-hidden="true"></div>
+  <div class="hero-orb orb-2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- Left: Copy -->
+    <div>
+      <div class="event-chips">
+        <span class="event-chip chip-amber"><span class="chip-dot"></span>Live Webinar</span>
+        <span class="event-chip chip-teal">April 21, 2025</span>
+        <span class="event-chip chip-white">6:00 PM ET · Free</span>
+      </div>
+
+      <span class="hero-eyebrow">The Empowered CRNA Presents</span>
+      <h1 class="heading-xl hero-title" style="margin-bottom:16px;">
+        The <span class="accent">Wealth</span><br>Clinic
+      </h1>
+
+      <p class="hero-topic">
+        "The Side Income Playbook — What Actually Works for Busy CRNAs"
+      </p>
+
+      <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;margin-bottom:36px;max-width:480px;">
+        One evening. One expert. Real strategies you can act on Monday morning. Join us for an intimate, free session designed exclusively for nurse anesthetists ready to build income beyond the OR.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#register" class="btn btn-amber">Reserve My Spot →</a>
+        <a href="#speaker" class="btn btn-glass-light">Meet the Speaker</a>
+      </div>
+    </div>
+
+    <!-- Right: Registration Form -->
+    <div>
+      <div class="hero-form-card" id="register">
+        <h3>Save Your Seat</h3>
+        <p>Free · Exclusive to CRNAs · April 21 at 6PM ET</p>
+        <div class="fc-wrap">
+          <div data-fc-seamless="true" data-fc-key="d4607654" style="max-width:500px;height:606.5px"></div>
+          <script src="https://app.formcrafts.com/embed.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAND ─────────────────────────────────── -->
+<div class="divider-band">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">550+</div>
+        <div class="stat-label">CRNAs in Community</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Free</div>
+        <div class="stat-label">Every Session</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3rd Tue</div>
+        <div class="stat-label">Monthly Cadence</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6 PM ET</div>
+        <div class="stat-label">April 21, 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHAT YOU'LL LEARN ──────────────────────────── -->
+<section id="learn" class="section" aria-labelledby="learn-h">
+  <div class="container">
+    <span class="label label-dark">This Session</span>
+    <h2 id="learn-h" class="heading-lg reveal" style="max-width:540px;">What you'll walk away with.</h2>
+
+    <div class="learn-grid">
+      <!-- Left: Takeaways -->
+      <div class="learn-list">
+        <div class="learn-item reveal">
+          <div class="learn-icon">💡</div>
+          <div class="learn-text">
+            <strong>Side Income That Fits a CRNA Schedule</strong>
+            <p>Discover income streams built for high-earners with demanding shifts — no hustle culture required.</p>
+          </div>
+        </div>
+        <div class="learn-item reveal d1">
+          <div class="learn-icon">📈</div>
+          <div class="learn-text">
+            <strong>What Actually Moves the Needle</strong>
+            <p>Cut through the noise. Learn which strategies generate real, lasting returns for healthcare professionals with W2 incomes.</p>
+          </div>
+        </div>
+        <div class="learn-item reveal d2">
+          <div class="learn-icon">🏗️</div>
+          <div class="learn-text">
+            <strong>Building a Financial Foundation</strong>
+            <p>How to leverage your CRNA income as an asset — and structure it so money works while you sleep.</p>
+          </div>
+        </div>
+        <div class="learn-item reveal d3">
+          <div class="learn-icon">🤝</div>
+          <div class="learn-text">
+            <strong>Live Q&amp;A with Derrick Murray</strong>
+            <p>Bring your real questions. Ask a Forbes-recognized financial expert directly — no gatekeeping.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quote + Event Info -->
+      <div class="learn-sidebar">
+        <blockquote class="learn-quote-card glass reveal">
+          <span class="learn-quote-mark" aria-hidden="true">"</span>
+          <p class="learn-quote-text">Most CRNAs are sitting on enormous financial potential they've never been taught to activate. This session changes that.</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:16px;font-weight:600;">— Leslie Awasom, CRNA &amp; Host</p>
+        </blockquote>
+
+        <div class="learn-event-card reveal d1">
+          <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:4px;">Session Details</p>
+          <div class="learn-event-row">
+            <div class="learn-event-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <div class="learn-event-label">Date</div>
+              <div class="learn-event-value">Monday, April 21, 2025</div>
+            </div>
+          </div>
+          <div class="learn-event-row">
+            <div class="learn-event-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="learn-event-label">Time</div>
+              <div class="learn-event-value">6:00 PM Eastern Time</div>
+            </div>
+          </div>
+          <div class="learn-event-row">
+            <div class="learn-event-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="learn-event-label">Who</div>
+              <div class="learn-event-value">CRNAs Only · Free to Attend</div>
+            </div>
+          </div>
+          <div class="learn-event-row">
+            <div class="learn-event-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="learn-event-label">Format</div>
+              <div class="learn-event-value">Live Webinar + Q&amp;A</div>
+            </div>
+          </div>
+          <a href="#register" class="btn btn-amber" style="margin-top:8px;justify-content:center;">Reserve My Free Spot →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKER ─────────────────────────────────────── -->
+<section id="speaker" class="section" aria-labelledby="speaker-h" style="background:var(--warm-white2);">
+  <div class="container">
+    <span class="label label-dark">Your Expert</span>
+    <h2 id="speaker-h" class="heading-lg reveal" style="max-width:560px;">Meet your guest speaker.</h2>
+
+    <div class="speaker-grid" style="margin-top:52px;">
+      <!-- Photo -->
+      <div class="speaker-photo-wrap reveal">
+        <img src="assets/images/Derrick Headhsot.jpg" alt="Derrick Murray, CFP® – Founder & CEO of Outlier Wealth" class="speaker-photo" />
+        <div class="speaker-badge">Forbes Best-in-State</div>
+      </div>
+
+      <!-- Bio -->
+      <div class="reveal d1" style="padding-top:8px;">
+        <h3 class="speaker-name">Derrick Murray</h3>
+        <p class="speaker-title">Founder &amp; CEO, Outlier Wealth</p>
+
+        <div class="speaker-creds">
+          <span class="speaker-cred">✦ CFP®</span>
+          <span class="speaker-cred">✦ CLTC®</span>
+          <span class="speaker-cred">✦ RICP®</span>
+          <span class="speaker-cred">✦ Northwestern Mutual Forum</span>
+        </div>
+
+        <div class="speaker-bio">
+          <p>Derrick Murray is the founder and CEO of Outlier Wealth, a multi-million dollar managing practice built on the belief that everyone deserves a financial advocate. Since joining Northwestern Mutual in the fall of 2013, Derrick has grown a powerhouse team dedicated to helping clients make a fortune and secure their future.</p>
+          <p>A Furman University graduate who played college football all four years, Derrick's discipline on the field translated directly into his approach to building lasting financial security for his clients. Growing up in Atlanta, Georgia, he found his calling at the intersection of community, people, and long-reaching impact.</p>
+          <p>He is a devoted husband, father, and board member of several local foundations. In his spare time he loves to exercise, travel, attend live sporting events, and spend time with family and friends.</p>
+        </div>
+
+        <div class="speaker-accolades">
+          <div class="accolade">
+            <span class="accolade-star">★</span>
+            <p class="accolade-text"><strong>Forbes "Best-in-State Top Financial Security Professionals"</strong> — awarded multiple years for excellence in client financial outcomes.</p>
+          </div>
+          <div class="accolade">
+            <span class="accolade-star">★</span>
+            <p class="accolade-text"><strong>Multi-qualifying member of the Northwestern Mutual Forum</strong> — among the top-performing financial professionals in the nation.</p>
+          </div>
+          <div class="accolade">
+            <span class="accolade-star">★</span>
+            <p class="accolade-text"><strong>Built a multi-million dollar managing practice</strong> — with a mission to be an unwavering advocate for every client he serves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────── -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <span class="label" style="color:var(--teal-lt);margin-bottom:18px;">April 21 · 6PM ET · Free</span>
+      <h2 class="heading-lg reveal" style="color:#fff;margin-bottom:14px;">
+        Your seat is waiting.<br><span style="color:var(--amber);">Don't miss this one.</span>
+      </h2>
+      <p class="reveal d1">One session with the right expert can change how you think about money for the rest of your career. This one's free. Reserve your spot now.</p>
+      <div class="cta-band-actions reveal d2">
+        <a href="#register" class="btn btn-amber">Reserve My Free Spot →</a>
+        <a href="https://empowered-crna.onrender.com" class="btn btn-glass-light">Back to Main Site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="https://empowered-crna.onrender.com" class="footer-logo" aria-label="The Empowered CRNA">
+        <img src="assets/images/CRNA-LOGO-03@3x.png" alt="The Empowered CRNA logo" />
+      </a>
+      <div class="footer-links">
+        <a href="https://empowered-crna.onrender.com">Home</a>
+        <a href="https://empowered-crna.onrender.com/#webinar">Webinars</a>
+        <a href="https://empowered-crna.onrender.com/#whatsapp">Community</a>
+      </div>
+      <p class="footer-copy">© 2025 The Empowered CRNA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+</script>
+</body>
+</html>

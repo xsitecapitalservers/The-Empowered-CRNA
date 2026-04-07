@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free eBook: The CRNA Investor's Blueprint | The Empowered CRNA</title>
+  <meta name="description" content="Download your free copy of The CRNA Investor's Blueprint — the guide to building passive wealth with your W2 income. Written for nurse anesthetists by Leslie Awasom, CRNA & COO." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Free eBook: The CRNA Investor's Blueprint" />
+  <meta property="og:description" content="What 100+ CRNAs know about passive income that residency never taught you. Download free." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────── */
+    :root {
+      --carbon:      #181e22;
+      --petrol:      #1B5060;
+      --teal:        #2A9090;
+      --teal-lt:     #6dcfcf;
+      --amber:       #E8A830;
+      --amber-lt:    #F5C96A;
+      --warm-white:  #F5F2EE;
+      --warm-white2: #EDEAE5;
+      --text-primary:   #1A1C1E;
+      --text-secondary: #4A5058;
+      --text-muted:     #7A8290;
+      --glass-bg:        rgba(255,255,255,0.55);
+      --glass-bg-strong: rgba(255,255,255,0.78);
+      --glass-border:    rgba(255,255,255,0.82);
+      --glass-shadow:    0 8px 32px rgba(27,80,96,0.10), 0 1.5px 4px rgba(0,0,0,0.05);
+      --glass-blur:      blur(20px) saturate(180%);
+      --r-sm: 12px; --r-md: 20px; --r-lg: 32px; --r-xl: 48px;
+      --sp: clamp(64px, 8vw, 104px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 60px); }
+    .section { padding-block: var(--sp); }
+
+    /* ── TYPE ───────────────────────────────────── */
+    .label { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 14px; }
+    .label-dark { color: var(--teal); }
+    h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .heading-xl  { font-size: clamp(42px, 6.5vw, 86px); font-weight: 800; line-height: 1.03; letter-spacing: -0.02em; }
+    .heading-lg  { font-size: clamp(30px, 4vw, 54px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+    .heading-md  { font-size: clamp(22px, 2.8vw, 36px); font-weight: 700; line-height: 1.2; }
+    .heading-sm  { font-size: clamp(18px, 1.8vw, 24px); font-weight: 700; line-height: 1.3; }
+    .body-lg  { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; }
+    .body-md  { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.7; }
+    .text-secondary { color: var(--text-secondary); }
+    .text-muted { color: var(--text-muted); }
+    .text-amber { color: var(--amber); }
+    .text-teal  { color: var(--teal-lt); }
+    .center { text-align: center; }
+
+    /* ── GLASS ──────────────────────────────────── */
+    .glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--r-md); box-shadow: var(--glass-shadow); }
+
+    /* ── BUTTONS ────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 32px; border-radius: 100px; font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.22s, box-shadow 0.22s; border: none; white-space: nowrap; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amber { background: var(--amber); color: var(--carbon); box-shadow: 0 4px 24px rgba(232,168,48,.38); }
+    .btn-amber:hover { background: #f0b93a; box-shadow: 0 8px 36px rgba(232,168,48,.5); }
+    .btn-glass-light { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.22); color: #fff; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .btn-glass-light:hover { background: rgba(255,255,255,0.2); }
+    .btn-petrol { background: var(--petrol); color: #fff; box-shadow: 0 4px 20px rgba(27,80,96,.3); }
+    .btn-petrol:hover { box-shadow: 0 8px 32px rgba(27,80,96,.45); }
+    .btn-lg { padding: 17px 40px; font-size: 16px; }
+
+    /* ── NAV ────────────────────────────────────── */
+    #nav { position: fixed; top: 12px; left: 0; right: 0; z-index: 100; padding-inline: clamp(12px, 3vw, 40px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin-inline: auto; padding: 12px clamp(16px, 3vw, 32px); background: rgba(245,242,238,0.88); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,0.82); border-radius: 999px; box-shadow: 0 4px 24px rgba(27,80,96,.08); transition: all .3s ease; }
+    #nav.scrolled .nav-inner { background: rgba(245,242,238,0.96); box-shadow: 0 6px 32px rgba(27,80,96,.14); }
+    .nav-logo img { height: 28px; width: auto; display: block; }
+    .nav-back { font-size: 13px; font-weight: 500; color: var(--text-secondary); transition: color .2s; }
+    .nav-back:hover { color: var(--petrol); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+
+    /* ── HERO ───────────────────────────────────── */
+    #hero { min-height: 100svh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px; }
+    .hero-bg { position: absolute; inset: 0; background:
+      radial-gradient(ellipse 65% 55% at 80% 15%, rgba(42,144,144,.20) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 55% at 10% 90%, rgba(232,168,48,.14) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 70% at 40% 50%, rgba(27,80,96,.28) 0%, transparent 70%),
+      #181e22;
+      z-index: 0;
+    }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none; }
+    .orb-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(42,144,144,.18), transparent 70%); top: -180px; right: -160px; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,168,48,.10), transparent 70%); bottom: -80px; left: -80px; }
+
+    .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 60px); padding-block: 60px 80px; }
+
+    /* Chip */
+    .chip { display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    .chip-amber { background: rgba(232,168,48,.15); border: 1px solid rgba(232,168,48,.35); color: var(--amber); }
+    .chip-teal  { background: rgba(42,144,144,.14); border: 1px solid rgba(42,144,144,.32); color: var(--teal-lt); }
+    .chip-white { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.65); }
+    .chip-dot   { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .chips-row  { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+
+    .hero-headline { color: #fff; margin-bottom: 16px; }
+    .hero-headline .accent { color: var(--teal-lt); }
+    .hero-headline .amber  { color: var(--amber); }
+    .hero-sub { color: rgba(255,255,255,.58); font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
+
+    .hero-topics { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+    .hero-topics li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.55; }
+    .h-check { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, var(--petrol), var(--teal)); color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    /* ── BOOK MOCKUP ────────────────────────────── */
+    .book-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
+    .book-glow { position: absolute; width: 340px; height: 440px; background: radial-gradient(ellipse, rgba(232,168,48,.22), rgba(42,144,144,.12), transparent 70%); filter: blur(40px); border-radius: 50%; z-index: 0; }
+    .book { position: relative; z-index: 1; width: 260px; height: 340px; border-radius: 4px 16px 16px 4px; box-shadow: -8px 12px 40px rgba(0,0,0,.5), 4px 4px 0 rgba(255,255,255,.04) inset, -4px 0 0 rgba(0,0,0,.25); transform: perspective(900px) rotateY(-12deg); transition: transform .4s ease; background: linear-gradient(160deg, #0d2b38 0%, #1B5060 45%, #0f1e24 100%); overflow: hidden; }
+    .book:hover { transform: perspective(900px) rotateY(-6deg) translateY(-6px); }
+    /* spine */
+    .book::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 22px; background: linear-gradient(180deg, #0a1f2a 0%, #1a4455 50%, #0a1f2a 100%); box-shadow: 2px 0 6px rgba(0,0,0,.3); }
+    /* top amber stripe */
+    .book::after { content: ''; position: absolute; top: 0; left: 22px; right: 0; height: 5px; background: linear-gradient(90deg, var(--amber), var(--amber-lt)); }
+
+    .book-inner { position: absolute; inset: 0; padding: 28px 24px 24px 36px; display: flex; flex-direction: column; }
+    .book-logo { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: auto; }
+    .book-eyebrow { font-family: 'Jost', sans-serif; font-size: 9.5px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    .book-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 800; line-height: 1.15; color: #fff; margin-bottom: 8px; }
+    .book-subtitle { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,.5); line-height: 1.5; margin-bottom: 20px; }
+    .book-divider { height: 1px; background: linear-gradient(90deg, var(--amber), transparent); margin-bottom: 14px; }
+    .book-author { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; color: rgba(255,255,255,.55); letter-spacing: .08em; }
+    .book-author span { color: rgba(255,255,255,.8); }
+
+    /* floating badge on book */
+    .book-badge { position: absolute; top: -16px; right: -16px; width: 72px; height: 72px; background: var(--amber); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(232,168,48,.45); z-index: 2; }
+    .book-badge-top { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--carbon); }
+    .book-badge-big { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 800; color: var(--carbon); line-height: 1; }
+
+    /* pages effect */
+    .book-pages { position: absolute; right: -4px; top: 8px; bottom: 8px; width: 10px; background: repeating-linear-gradient(to bottom, #e8e0d4 0px, #e8e0d4 1px, #f5f0e8 1px, #f5f0e8 3px); border-radius: 0 3px 3px 0; box-shadow: 2px 0 4px rgba(0,0,0,.15); }
+
+    /* ── FORM CARD ──────────────────────────────── */
+    .hero-form-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--r-lg); padding: 36px 32px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    .hero-form-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .hero-form-card > p { font-size: 14px; color: rgba(255,255,255,.48); margin-bottom: 22px; }
+    .fc-wrap { width: 100%; overflow: hidden; }
+    .fc-wrap > div { max-width: 100% !important; }
+
+    /* ── TRUST BAR ──────────────────────────────── */
+    .trust-bar { background: linear-gradient(135deg, var(--petrol) 0%, var(--teal) 100%); padding: 28px 0; }
+    .trust-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+    .trust-item { display: flex; align-items: center; gap: 10px; padding: 0 36px; border-right: 1px solid rgba(255,255,255,.18); }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon { font-size: 22px; }
+    .trust-label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.85); }
+
+    /* ── INSIDE ─────────────────────────────────── */
+    #inside { background: var(--warm-white2); }
+    .inside-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
+    .chapter-list { display: flex; flex-direction: column; gap: 0; }
+    .chapter { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(27,80,96,.1); }
+    .chapter:first-child { padding-top: 0; }
+    .chapter:last-child { border-bottom: none; }
+    .chapter-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 800; color: rgba(27,80,96,.12); line-height: 1; flex-shrink: 0; width: 52px; padding-top: 2px; }
+    .chapter-content strong { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; display: block; color: var(--text-primary); margin-bottom: 5px; line-height: 1.2; }
+    .chapter-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    .inside-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .stat-card { background: linear-gradient(135deg, #181e22 0%, #1B5060 100%); border-radius: var(--r-md); padding: 30px 28px; }
+    .stat-card-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 6vw, 72px); font-weight: 800; color: var(--amber); line-height: 1; }
+    .stat-card-label { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.6); margin-top: 6px; line-height: 1.5; }
+    .who-card { padding: 28px 30px; }
+    .who-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .who-list { display: flex; flex-direction: column; gap: 10px; }
+    .who-item { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--text-secondary); }
+    .who-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 7px; }
+
+    /* ── ABOUT ──────────────────────────────────── */
+    #about { background: var(--warm-white); }
+    .about-grid { display: grid; grid-template-columns: 360px 1fr; gap: 72px; align-items: center; }
+    .about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: var(--r-lg); box-shadow: 0 24px 64px rgba(27,80,96,.18); }
+    .about-name  { font-size: clamp(34px, 4.5vw, 58px); font-weight: 800; line-height: 1.05; margin-bottom: 6px; }
+    .about-title { font-size: 15px; font-weight: 500; color: var(--teal); margin-bottom: 24px; }
+    .about-creds { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .about-cred  { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(27,80,96,.08); border: 1px solid rgba(27,80,96,.15); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--petrol); }
+    .about-bio { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+    .about-bio p + p { margin-top: 14px; }
+    .about-stats { display: flex; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+    .about-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 800; color: var(--petrol); line-height: 1; }
+    .about-stat-lbl { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+
+    /* ── TESTIMONIALS ───────────────────────────── */
+    #testimonials { background: var(--warm-white2); }
+    .t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+    .t-card { padding: 28px; display: flex; flex-direction: column; }
+    .t-stars { color: var(--amber); font-size: 14px; margin-bottom: 14px; }
+    .t-quote { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; font-weight: 600; color: var(--petrol); line-height: 1.55; flex: 1; margin-bottom: 18px; }
+    .t-author-name { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+    .t-author-role { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── CTA BAND ───────────────────────────────── */
+    .cta-band { background: linear-gradient(135deg, #181e22 0%, #1B5060 100%); padding: clamp(60px, 8vw, 100px) 0; position: relative; overflow: hidden; }
+    .cta-band::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(42,144,144,.15), transparent 70%); pointer-events: none; }
+    .cta-band::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,168,48,.1), transparent 70%); pointer-events: none; }
+    .cta-band-inner { position: relative; z-index: 1; text-align: center; }
+    .cta-band h2 { color: #fff; margin-bottom: 14px; }
+    .cta-band p { color: rgba(255,255,255,.52); font-size: clamp(15px, 1.4vw, 18px); max-width: 520px; margin: 0 auto 36px; }
+    .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer { background: #111518; padding: 32px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo img { height: 24px; width: auto; opacity: .65; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.38); transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.22); }
+
+    /* ── REVEAL ─────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .12s; }
+    .d2 { transition-delay: .24s; }
+    .d3 { transition-delay: .36s; }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 920px) {
+      .hero-content { grid-template-columns: 1fr; gap: 48px; }
+      .hero-content > div:first-child { order: 1; }
+      .hero-content > div:last-child { order: 2; }
+      .inside-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { max-width: 300px; margin-inline: auto; }
+      .t-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .trust-item { padding: 10px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); width: 100%; justify-content: center; }
+      .trust-item:last-child { border-bottom: none; }
+      .trust-row { flex-direction: column; }
+      .hero-form-card { padding: 26px 18px; }
+      .book { width: 210px; height: 274px; }
+      .book-title { font-size: 21px; }
+      .about-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav id="nav" role="navigation" aria-label="Page navigation">
+  <div class="nav-inner">
+    <a href="https://empowered-crna.onrender.com" class="nav-logo" aria-label="The Empowered CRNA – Home">
+      <img src="assets/images/CRNA-LOGO-03@3x.png" alt="The Empowered CRNA logo" />
+    </a>
+    <div class="nav-right">
+      <a href="https://empowered-crna.onrender.com" class="nav-back">← Back to Main Site</a>
+      <a href="#download" class="btn btn-amber" style="padding:10px 22px;font-size:14px;">Get Free eBook</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-orb orb-1" aria-hidden="true"></div>
+  <div class="hero-orb orb-2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- Left: Copy -->
+    <div>
+      <div class="chips-row">
+        <span class="chip chip-amber"><span class="chip-dot"></span>Free Download</span>
+        <span class="chip chip-teal">For CRNAs Only</span>
+        <span class="chip chip-white">Instant Access</span>
+      </div>
+
+      <span class="label" style="display:block;margin-bottom:16px;">The Empowered CRNA Presents</span>
+      <h1 class="heading-xl hero-headline" style="margin-bottom:18px;">
+        The CRNA<br>Investor's<br><span class="amber">Blueprint</span>
+      </h1>
+
+      <p class="hero-sub">
+        What 100+ CRNAs know about passive income that residency never taught you — and exactly how to act on it with the income you already have.
+      </p>
+
+      <ul class="hero-topics" aria-label="What you'll learn">
+        <li><div class="h-check">✓</div><span>Why your W2 income is your single greatest investing asset</span></li>
+        <li><div class="h-check">✓</div><span>The multifamily framework Leslie used to go from CRNA to COO of a capital firm</span></li>
+        <li><div class="h-check">✓</div><span>How to evaluate syndication deals in under 2 hours</span></li>
+        <li><div class="h-check">✓</div><span>Tax strategies high-income earners almost never learn in time</span></li>
+        <li><div class="h-check">✓</div><span>Your first 3 steps to passive income while you're still in the OR</span></li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-amber btn-lg">Get Your Free Copy →</a>
+        <a href="#inside" class="btn btn-glass-light">See What's Inside</a>
+      </div>
+    </div>
+
+    <!-- Right: Book mockup -->
+    <div class="book-wrap" style="padding: 40px 0;">
+      <div class="book-glow"></div>
+      <div class="book" aria-label="The CRNA Investor's Blueprint eBook cover">
+        <div class="book-pages" aria-hidden="true"></div>
+        <div class="book-inner">
+          <div class="book-logo">The Empowered CRNA</div>
+          <div>
+            <div class="book-eyebrow">Free Guide</div>
+            <div class="book-title">The CRNA<br>Investor's<br>Blueprint</div>
+            <div class="book-subtitle">What 100+ CRNAs know about<br>passive income that residency<br>never taught you</div>
+            <div class="book-divider"></div>
+            <div class="book-author">By <span>Leslie Awasom</span><br>CRNA · COO · Mentor</div>
+          </div>
+        </div>
+        <div class="book-badge" aria-hidden="true">
+          <div class="book-badge-top">100%</div>
+          <div class="book-badge-big">Free</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ──────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item">
+        <span class="trust-icon">📖</span>
+        <span class="trust-label">Read by 100+ CRNAs</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">⚡</span>
+        <span class="trust-label">Instant PDF Delivery</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        <span class="trust-label">No Spam. Ever.</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🏥</span>
+        <span class="trust-label">Built Exclusively for CRNAs</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DOWNLOAD FORM ──────────────────────────────── -->
+<section id="download" class="section" aria-labelledby="download-h" style="background: var(--warm-white);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;">
+
+      <!-- Left: pitch -->
+      <div class="reveal">
+        <span class="label label-dark">Free Download</span>
+        <h2 id="download-h" class="heading-lg" style="margin-bottom:20px;">
+          CRNAs earn in the<br>top 2% of the US.<br>
+          <span style="color:var(--petrol);">Most still retire on one income stream.</span>
+        </h2>
+        <p class="body-md text-secondary" style="margin-bottom:28px;">
+          This guide exists to change that. It's built around your W2, your schedule, and your risk tolerance — not generic advice written for someone else's life.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:36px;">
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--petrol),var(--teal));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏗️</div>
+            <div>
+              <strong style="font-family:'Cormorant Garamond',serif;font-size:18px;display:block;margin-bottom:3px;">Real Frameworks, Not Theory</strong>
+              <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;">The same investing approach Leslie used to co-lead $274M in assets under management.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#E8A830,#F5C96A);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">⏱️</div>
+            <div>
+              <strong style="font-family:'Cormorant Garamond',serif;font-size:18px;display:block;margin-bottom:3px;">Built for Busy Schedules</strong>
+              <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;">Every strategy in this guide is designed for CRNAs who are still working full-time shifts.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-lt));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💡</div>
+            <div>
+              <strong style="font-family:'Cormorant Garamond',serif;font-size:18px;display:block;margin-bottom:3px;">Actionable from Page One</strong>
+              <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;">Step-by-step guidance you can start implementing this week — no financial background needed.</p>
+            </div>
+          </div>
+        </div>
+
+        <blockquote style="border-left:3px solid var(--amber);padding-left:18px;">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:600;color:var(--petrol);line-height:1.5;margin-bottom:8px;">"I wish I had this when I started. It would have saved me three years and two wrong turns."</p>
+          <p style="font-size:13px;color:var(--text-muted);font-weight:600;">— Sarah M., CRNA · First-time multifamily investor</p>
+        </blockquote>
+      </div>
+
+      <!-- Right: form -->
+      <div class="reveal d1">
+        <div class="glass" style="padding: clamp(28px,3.5vw,44px);">
+          <span class="label label-dark">Instant Access</span>
+          <h3 class="heading-md" style="margin-bottom:8px;">Download Your Free Copy</h3>
+          <p class="body-md text-secondary" style="margin-bottom:24px;">Enter your details below and get the guide delivered immediately.</p>
+          <div class="fc-wrap">
+            <div data-fc-seamless="true" data-fc-key="ae1f4fb4" style="width:100%;height:641.14px"></div>
+            <script src="https://app.formcrafts.com/embed.js"></script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INSIDE ──────────────────────────────── -->
+<section id="inside" class="section" aria-labelledby="inside-h">
+  <div class="container">
+    <span class="label label-dark">Inside the Guide</span>
+    <h2 id="inside-h" class="heading-lg reveal" style="max-width:540px;">Five chapters that change how you think about money.</h2>
+
+    <div class="inside-grid">
+      <!-- Chapters -->
+      <div class="chapter-list">
+        <div class="chapter reveal">
+          <div class="chapter-num">01</div>
+          <div class="chapter-content">
+            <strong>Your W2 Is a Weapon — Start Using It</strong>
+            <p>Why your CRNA income is your unfair advantage and the exact mindset shift that separates CRNAs who build wealth from those who don't.</p>
+          </div>
+        </div>
+        <div class="chapter reveal d1">
+          <div class="chapter-num">02</div>
+          <div class="chapter-content">
+            <strong>The Multifamily Investment Framework</strong>
+            <p>How Leslie went from CRNA to COO of a capital investment firm — and the exact investment thesis that made it possible.</p>
+          </div>
+        </div>
+        <div class="chapter reveal d2">
+          <div class="chapter-num">03</div>
+          <div class="chapter-content">
+            <strong>Evaluating Deals in Under 2 Hours</strong>
+            <p>A simple checklist for analysing syndication opportunities without quitting your day job or becoming a full-time investor.</p>
+          </div>
+        </div>
+        <div class="chapter reveal d3">
+          <div class="chapter-num">04</div>
+          <div class="chapter-content">
+            <strong>Tax Strategies They Never Teach Healthcare Professionals</strong>
+            <p>The legal tax advantages available to high-income earners that most CRNAs don't discover until it's already cost them tens of thousands.</p>
+          </div>
+        </div>
+        <div class="chapter reveal" style="transition-delay:.48s">
+          <div class="chapter-num">05</div>
+          <div class="chapter-content">
+            <strong>Your First Three Steps — Starting This Week</strong>
+            <p>A clear, sequential action plan for building passive income while you're still working full-time shifts. No vague advice — just the next move.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="inside-sidebar">
+        <div class="stat-card reveal">
+          <div class="stat-card-num">$274M</div>
+          <div class="stat-card-label">in assets under management by Leslie's firm — built using the same principles in this guide.</div>
+        </div>
+        <div class="who-card glass reveal d1">
+          <p class="who-title">This guide is for you if…</p>
+          <ul class="who-list">
+            <li class="who-item"><span class="who-dot"></span><span>You're earning well but feel like you have nothing to show for it</span></li>
+            <li class="who-item"><span class="who-dot"></span><span>You want to invest but don't know where to start</span></li>
+            <li class="who-item"><span class="who-dot"></span><span>You're interested in real estate but think it requires full-time effort</span></li>
+            <li class="who-item"><span class="who-dot"></span><span>You want to build income that doesn't stop when your shifts do</span></li>
+            <li class="who-item"><span class="who-dot"></span><span>You're ready to stop leaving your financial future to chance</span></li>
+          </ul>
+        </div>
+        <a href="#download" class="btn btn-amber btn-lg reveal d2" style="justify-content:center;">Download Free Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT LESLIE ───────────────────────────────── -->
+<section id="about" class="section" aria-labelledby="about-h" style="background: var(--warm-white2);">
+  <div class="container">
+    <span class="label label-dark">Your Author</span>
+    <h2 id="about-h" class="heading-lg reveal" style="max-width:500px;margin-bottom:52px;">Written by someone who lived it.</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="assets/images/leslie-bio.jpg" alt="Leslie Awasom, CRNA, COO and author of The CRNA Investor's Blueprint" class="about-photo" />
+      </div>
+
+      <div class="reveal d1">
+        <h3 class="about-name">Leslie Awasom</h3>
+        <p class="about-title">CRNA · COO at XSITE Capital · Community Founder</p>
+        <div class="about-creds">
+          <span class="about-cred">✦ Certified Registered Nurse Anesthetist</span>
+          <span class="about-cred">✦ COO, XSITE Capital</span>
+          <span class="about-cred">✦ $274M AUM</span>
+        </div>
+        <div class="about-bio">
+          <p>Leslie Awasom is a CRNA who took the same skills that made him exceptional in the OR — precision, discipline, and the ability to perform under pressure — and used them to build a parallel career in real estate investment.</p>
+          <p>As COO of XSITE Capital, Leslie now helps oversee $274M in assets under management. But his real passion is making sure other CRNAs don't spend years figuring out what he had to learn the hard way.</p>
+          <p>The Empowered CRNA community exists because Leslie believes that a credential this powerful deserves a financial life to match it. This guide is where it starts.</p>
+        </div>
+        <div class="about-stats">
+          <div>
+            <div class="about-stat-num">$274M</div>
+            <div class="about-stat-lbl">Assets Under Mgmt.</div>
+          </div>
+          <div>
+            <div class="about-stat-num">550+</div>
+            <div class="about-stat-lbl">CRNAs in Community</div>
+          </div>
+          <div>
+            <div class="about-stat-num">10+</div>
+            <div class="about-stat-lbl">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────── -->
+<section id="testimonials" class="section" aria-labelledby="t-h" style="background: var(--warm-white);">
+  <div class="container">
+    <div class="center" style="margin-bottom: 0;">
+      <span class="label label-dark">Reader Feedback</span>
+      <h2 id="t-h" class="heading-lg reveal">What CRNAs say after reading it.</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card glass reveal">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I've been a CRNA for 11 years and nobody ever talked to me about this. The chapter on tax strategies alone is worth more than the guide's price tag — which is zero. Read it."</p>
+        <div class="t-author-name">Marcus T., CRNA</div>
+        <div class="t-author-role">12 years clinical experience</div>
+      </div>
+      <div class="t-card glass reveal d1">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I read it in one sitting. The deal evaluation checklist in chapter 3 is genuinely useful — I used it two weeks later on my first syndication review. I was not intimidated at all."</p>
+        <div class="t-author-name">Priya K., CRNA</div>
+        <div class="t-author-role">First-time real estate investor</div>
+      </div>
+      <div class="t-card glass reveal d2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Leslie writes the way he teaches — direct, practical, no fluff. I've sent this to three colleagues. It reframes how you think about your income from day one."</p>
+        <div class="t-author-name">Dana R., CRNA</div>
+        <div class="t-author-role">Community member since 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ─────────────────────────────────── -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <span class="label" style="color:var(--teal-lt);margin-bottom:18px;">Free · Instant · No Strings</span>
+      <h2 class="heading-lg reveal" style="margin-bottom:14px;">
+        Your credential is the floor.<br><span style="color:var(--amber);">Now build the ceiling.</span>
+      </h2>
+      <p class="reveal d1">Download the guide that 100+ CRNAs have used to start thinking — and acting — differently about money. It's free, it's instant, and it might be the most useful thing you read this year.</p>
+      <div class="cta-actions reveal d2">
+        <a href="#download" class="btn btn-amber btn-lg">Get My Free Copy →</a>
+        <a href="https://empowered-crna.onrender.com" class="btn btn-glass-light">Back to Main Site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="https://empowered-crna.onrender.com" class="footer-logo">
+        <img src="assets/images/CRNA-LOGO-03@3x.png" alt="The Empowered CRNA logo" />
+      </a>
+      <div class="footer-links">
+        <a href="https://empowered-crna.onrender.com">Home</a>
+        <a href="https://empowered-crna.onrender.com/#webinar">Webinars</a>
+        <a href="wealth-clinic.html">The Wealth Clinic</a>
+        <a href="https://empowered-crna.onrender.com/#whatsapp">Community</a>
+      </div>
+      <p class="footer-copy">© 2025 The Empowered CRNA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Nav scroll tint
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+</script>
+</body>
+</html>

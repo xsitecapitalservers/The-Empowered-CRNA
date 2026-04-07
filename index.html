@@ -172,6 +172,63 @@
       .hero-badges-row { max-width: 300px; }
     }
 
+    /* ── QUICK LINKS ────────────────────────────── */
+    #quick-links { background: var(--warm-white); padding-block: clamp(48px,6vw,80px); }
+    .ql-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .ql-grid { display: flex; flex-direction: column; gap: 14px; }
+    .ql-video-wrap { border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 20px 56px rgba(27,80,96,.18), 0 0 0 1px rgba(0,0,0,.06); aspect-ratio: 16/9; background: #000; }
+    .ql-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 860px) { .ql-outer { grid-template-columns: 1fr; } }
+    .ql-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 32px; border-radius: 999px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; position: relative; overflow: hidden; }
+    .ql-bar:hover { transform: translateY(-3px) scale(1.01); }
+    .ql-bar::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .25s ease; }
+    .ql-bar:hover::before { opacity: 1; }
+
+    /* Bar 1 – Webinar (dark petrol) */
+    .ql-bar-1 { background: linear-gradient(110deg, var(--petrol) 0%, #0f3240 100%); box-shadow: 0 8px 32px rgba(27,80,96,.28), 0 1px 0 rgba(255,255,255,.06) inset; }
+    .ql-bar-1::before { background: linear-gradient(110deg, #1d6070 0%, #1B5060 100%); }
+    .ql-bar-1:hover { box-shadow: 0 16px 48px rgba(27,80,96,.38); }
+
+    /* Bar 2 – eBook (amber) */
+    .ql-bar-2 { background: linear-gradient(110deg, #b87d10 0%, var(--amber) 60%, #f5c340 100%); box-shadow: 0 8px 32px rgba(232,168,48,.32), 0 1px 0 rgba(255,255,255,.15) inset; }
+    .ql-bar-2::before { background: linear-gradient(110deg, #c48918 0%, #f0b93a 60%, #f5c340 100%); }
+    .ql-bar-2:hover { box-shadow: 0 16px 48px rgba(232,168,48,.48); }
+
+    /* Bar 3 – Newsletter (teal) */
+    .ql-bar-3 { background: linear-gradient(110deg, var(--teal) 0%, #1d7575 100%); box-shadow: 0 8px 32px rgba(42,144,144,.28), 0 1px 0 rgba(255,255,255,.08) inset; }
+    .ql-bar-3::before { background: linear-gradient(110deg, #31a5a5 0%, #229090 100%); }
+    .ql-bar-3:hover { box-shadow: 0 16px 48px rgba(42,144,144,.4); }
+
+    /* Bar 4 – WhatsApp (dark carbon) */
+    .ql-bar-4 { background: linear-gradient(110deg, #1a2e1a 0%, #25a244 60%, #128c3e 100%); box-shadow: 0 8px 32px rgba(37,162,68,.28), 0 1px 0 rgba(255,255,255,.06) inset; }
+    .ql-bar-4::before { background: linear-gradient(110deg, #1e3a1e 0%, #2db94e 60%, #16a34a 100%); }
+    .ql-bar-4:hover { box-shadow: 0 16px 48px rgba(37,162,68,.42); }
+    .ql-bar-4 .ql-icon { background: rgba(255,255,255,.12); }
+    .ql-bar-4 .ql-text-label { color: rgba(255,255,255,.5); }
+    .ql-bar-4 .ql-text-title { color: #fff; }
+    .ql-bar-4 .ql-arrow { color: rgba(255,255,255,.55); }
+
+    .ql-left { display: flex; align-items: center; gap: 18px; }
+    .ql-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .ql-bar-1 .ql-icon { background: rgba(255,255,255,.12); }
+    .ql-bar-2 .ql-icon { background: rgba(0,0,0,.12); }
+    .ql-bar-3 .ql-icon { background: rgba(255,255,255,.12); }
+    .ql-text-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 3px; }
+    .ql-bar-1 .ql-text-label, .ql-bar-3 .ql-text-label { color: rgba(255,255,255,.5); }
+    .ql-bar-2 .ql-text-label { color: rgba(0,0,0,.4); }
+    .ql-text-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px, 2vw, 22px); font-weight: 700; line-height: 1.15; }
+    .ql-bar-1 .ql-text-title, .ql-bar-3 .ql-text-title { color: #fff; }
+    .ql-bar-2 .ql-text-title { color: var(--carbon); }
+    .ql-arrow { font-size: 22px; flex-shrink: 0; transition: transform .25s ease; }
+    .ql-bar-1 .ql-arrow, .ql-bar-3 .ql-arrow { color: rgba(255,255,255,.55); }
+    .ql-bar-2 .ql-arrow { color: rgba(0,0,0,.35); }
+    .ql-bar:hover .ql-arrow { transform: translateX(5px); }
+
+    @media (max-width: 600px) {
+      .ql-bar { padding: 18px 22px; border-radius: 20px; }
+      .ql-text-title { font-size: 16px; }
+    }
+
     /* ── WHY ────────────────────────────────────── */
     #why { background: var(--warm-white2); position: relative; overflow: hidden; }
     #why::before { content: ''; position: absolute; top: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(42,144,144,.07), transparent 70%); pointer-events: none; }
@@ -394,8 +451,8 @@
     <ul class="nav-links" role="list">
       <li><a href="#why">Why</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
-      <li><a href="#ebook">Free eBook</a></li>
-      <li><a href="#webinar">Webinar</a></li>
+      <li><a href="free-ebook.html">Free eBook</a></li>
+      <li><a href="wealth-clinic.html">Webinar</a></li>
       <li><a href="#testimonials">Stories</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#founder">About</a></li>
@@ -427,8 +484,8 @@
       </h1>
       <p class="hero-sub">You put in the years. You hold the credential. The question is what you build with it — inside the OR and far beyond it.</p>
       <div class="hero-actions" style="margin-bottom:32px;">
-        <a href="#ebook" class="btn btn-primary">Get the Free eBook</a>
-        <a href="#webinar" class="btn btn-glass">Join the Webinar</a>
+        <a href="free-ebook.html" class="btn btn-primary">Get the Free eBook</a>
+        <a href="wealth-clinic.html" class="btn btn-glass">Join the Webinar</a>
       </div>
       <div class="hero-stats" role="list">
         <div role="listitem"><div class="stat-num">550+</div><div class="stat-label">Community Members</div></div>
@@ -464,6 +521,81 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── QUICK LINKS ───────────────────────────────── -->
+<section id="quick-links" aria-label="Quick links">
+  <div class="container">
+    <div class="ql-outer">
+
+      <!-- Left: header + pills -->
+      <div>
+        <div style="margin-bottom:28px;">
+          <span class="label label-dark" style="color:var(--teal);">The Empowered CRNA</span>
+          <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.2vw,42px); font-weight:800; line-height:1.1; color:var(--text-primary); margin-top:8px;">This is what the CRNA community<br>is all about.</h2>
+        </div>
+        <div class="ql-grid">
+
+      <!-- Webinar -->
+      <a href="wealth-clinic.html" class="ql-bar ql-bar-1" aria-label="Join The Wealth Clinic webinar">
+        <div class="ql-left">
+          <div class="ql-icon">🎙️</div>
+          <div>
+            <div class="ql-text-label">Free Monthly Webinar</div>
+            <div class="ql-text-title">The Wealth Clinic — Join the Next Live Session</div>
+          </div>
+        </div>
+        <span class="ql-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- eBook -->
+      <a href="free-ebook.html" class="ql-bar ql-bar-2" aria-label="Download the free eBook">
+        <div class="ql-left">
+          <div class="ql-icon">📖</div>
+          <div>
+            <div class="ql-text-label">Free Download</div>
+            <div class="ql-text-title">The CRNA Investor's Blueprint — Get Your Free Copy</div>
+          </div>
+        </div>
+        <span class="ql-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- Newsletter -->
+      <a href="#newsletter" class="ql-bar ql-bar-3" aria-label="Subscribe to the weekly newsletter">
+        <div class="ql-left">
+          <div class="ql-icon">✉️</div>
+          <div>
+            <div class="ql-text-label">Weekly Newsletter</div>
+            <div class="ql-text-title">5 Minutes of Life-Changing Truth — Subscribe Free</div>
+          </div>
+        </div>
+        <span class="ql-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="#whatsapp" class="ql-bar ql-bar-4" aria-label="Join the exclusive WhatsApp community">
+        <div class="ql-left">
+          <div class="ql-icon">💬</div>
+          <div>
+            <div class="ql-text-label">Exclusive Community</div>
+            <div class="ql-text-title">Join the WhatsApp Group — 550+ CRNAs Inside</div>
+          </div>
+        </div>
+        <span class="ql-arrow" aria-hidden="true">→</span>
+      </a>
+
+        </div><!-- end ql-grid -->
+      </div><!-- end left col -->
+
+      <!-- Right: video -->
+      <div class="ql-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="https://pub-68989bd4060d43fa8b57ed2f93892825.r2.dev/CRNA%20Website%20Video-HEVC%20Cellular%20large%20(3G%20or%20lower).mov" type="video/mp4" />
+        </video>
+      </div>
+
+    </div><!-- end ql-outer -->
   </div>
 </section>
 
@@ -579,125 +711,6 @@
   </div>
 </section>
 
-<!-- ── EBOOK ─────────────────────────────────────── -->
-<section id="ebook" class="section" aria-labelledby="ebook-h">
-  <div class="container">
-    <div class="ebook-two-col">
-
-      <!-- Left: content -->
-      <div class="ebook-left reveal">
-        <div class="sec-header-inline">
-          <span class="label">Free Download</span>
-          <h2 id="ebook-h" class="heading-lg">The CRNA Investor's<br>Blueprint</h2>
-          <p class="body-lg text-secondary" style="margin-top:14px;">What 100+ CRNAs know about passive income that residency never taught you.</p>
-        </div>
-
-        <div class="ebook-content" style="margin-top:32px;">
-          <p class="body-md">CRNAs earn in the top 2% of US household income. Most still retire with a single income stream — their salary. This guide shows exactly how to change that, using strategies built around your W2, your schedule, and your risk tolerance.</p>
-          <ul class="ebook-topics" aria-label="What you will learn">
-            <li><div class="ebook-check" aria-hidden="true">✓</div><span>Why your W2 income is your single greatest investing asset — and how to leverage it before your peers figure this out</span></li>
-            <li><div class="ebook-check" aria-hidden="true">✓</div><span>The multifamily investment framework that Leslie used to go from CRNA to COO of a capital investment firm</span></li>
-            <li><div class="ebook-check" aria-hidden="true">✓</div><span>How to evaluate syndication deals in under 2 hours — without quitting your day job</span></li>
-            <li><div class="ebook-check" aria-hidden="true">✓</div><span>Tax strategies that high-income healthcare professionals almost never learn about until it's too late</span></li>
-            <li><div class="ebook-check" aria-hidden="true">✓</div><span>The first three steps to building passive income while you're still in the OR</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Right: form -->
-      <div id="ebook-form-section" class="ebook-right glass reveal d1">
-        <span class="label">Instant Access</span>
-        <h3 class="heading-md">Download Your Free Copy</h3>
-        <p>Enter your details and get the guide immediately. No spam — ever.</p>
-        <div class="fc-wrap">
-          <div data-fc-seamless="true" data-fc-key="ae1f4fb4" style="width:100%;height:641.14px"></div>
-          <script src="https://app.formcrafts.com/embed.js"></script>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── WEBINAR ───────────────────────────────────── -->
-<section id="webinar" class="section" aria-labelledby="webinar-h" style="background: var(--warm-white2);">
-  <div class="container">
-    <div class="webinar-grid">
-      <div>
-        <span class="label">Monthly Webinar</span>
-        <div class="webinar-eyebrow">
-          ✦ Every 3rd Tuesday · 6:00 PM EST · Free
-        </div>
-        <h2 id="webinar-h" class="heading-lg reveal">For CRNAs,<br>By CRNAs.</h2>
-        <p class="body-lg text-secondary reveal d1" style="margin-top:14px; margin-bottom:0;">
-          A live monthly session where Leslie and the community break down exactly how nurse anesthetists are building financial independence — with real numbers, real deals, and real talk.
-        </p>
-        <ul class="webinar-features" aria-label="What you get">
-          <li><div class="wf-check" aria-hidden="true">✓</div><span>Practical strategies you can implement the same week — not theory, not someday</span></li>
-          <li><div class="wf-check" aria-hidden="true">✓</div><span>CRNA-specific content built around high W-2 income and unpredictable schedules</span></li>
-          <li><div class="wf-check" aria-hidden="true">✓</div><span>Live Q&amp;A with Leslie and experienced investors in the community</span></li>
-          <li><div class="wf-check" aria-hidden="true">✓</div><span>Lifetime access to all session recordings — watch on your schedule</span></li>
-          <li><div class="wf-check" aria-hidden="true">✓</div><span>Network with 550+ growth-minded CRNAs tackling the same challenges</span></li>
-        </ul>
-        <a href="#webinar-form" class="btn btn-primary">Reserve Your Spot →</a>
-      </div>
-
-      <div>
-        <div class="webinar-card glass">
-          <div class="webinar-meta-row" aria-label="Session details">
-            <div class="wmeta">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Every 3rd Tuesday
-            </div>
-            <div class="wmeta">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              6:00 PM EST
-            </div>
-            <div class="wmeta">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              CRNAs Only
-            </div>
-            <div class="wmeta">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 7 13.5 15.5 8.5 10.5 1 17"/><polyline points="17 7 23 7 23 13"/></svg>
-              Free to Join
-            </div>
-          </div>
-          <h3 class="webinar-card-title">Multifamily Investing for CRNAs</h3>
-          <p class="webinar-card-desc">How nurse anesthetists are leveraging their income to build passive wealth through multifamily real estate — without becoming full-time investors. Hosted by Leslie Awasom, CRNA &amp; COO at XSITE Capital.</p>
-          <div class="fc-wrap" id="webinar-form">
-            <div data-fc-seamless="true" data-fc-key="d4607654" style="max-width:500px;height:606.5px"></div>
-            <script src="https://app.formcrafts.com/embed.js"></script>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Webinar Testimonials -->
-    <div class="webinar-testimonials">
-      <h3 class="heading-sm serif">What attendees say after one session</h3>
-      <div class="wtestimonials-grid">
-        <div class="wt-card glass reveal">
-          <div class="wt-stars">★★★★★</div>
-          <p class="wt-quote">"Leslie's approach made multifamily investing finally make sense. I made my first $75K investment just 2 months after attending."</p>
-          <div class="wt-author-name">Sarah M., CRNA</div>
-          <div class="wt-author-role">First-time multifamily investor</div>
-        </div>
-        <div class="wt-card glass reveal d1">
-          <div class="wt-stars">★★★★★</div>
-          <p class="wt-quote">"His tax strategies alone have saved me a whole lot. I didn't know what I didn't know until this webinar."</p>
-          <div class="wt-author-name">Marcus T., CRNA</div>
-          <div class="wt-author-role">12 years clinical experience</div>
-        </div>
-        <div class="wt-card glass reveal d2">
-          <div class="wt-stars">★★★★★</div>
-          <p class="wt-quote">"They taught me an abundance mindset. There is beauty in partnership — and in having the right people in your corner."</p>
-          <div class="wt-author-name">Dr. Nkem Ezeamama, CRNA</div>
-          <div class="wt-author-role">Community member</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── TESTIMONIALS ──────────────────────────────── -->
 <section id="testimonials" class="section" aria-labelledby="t-h">
@@ -858,7 +871,7 @@
           <div class="fnum glass" role="listitem"><div class="fnum-val">550+</div><div class="fnum-label">Community Members</div></div>
         </div>
         <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="#webinar" class="btn btn-primary">Join the Webinar</a>
+          <a href="wealth-clinic.html" class="btn btn-primary">Join the Webinar</a>
           <a href="#whatsapp" class="btn btn-glass">Join the Community</a>
         </div>
       </div>
@@ -947,8 +960,8 @@
         <ul class="f-links" role="list">
           <li><a href="#why">Why This Community</a></li>
           <li><a href="#newsletter">Newsletter</a></li>
-          <li><a href="#ebook">Free eBook</a></li>
-          <li><a href="#webinar">Monthly Webinar</a></li>
+          <li><a href="free-ebook.html">Free eBook</a></li>
+          <li><a href="wealth-clinic.html">Monthly Webinar</a></li>
         </ul>
       </div>
       <div>
