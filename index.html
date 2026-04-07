@@ -181,8 +181,9 @@
     @media (max-width: 860px) { .ql-outer { grid-template-columns: 1fr; } }
     .ql-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 32px; border-radius: 999px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; position: relative; overflow: hidden; }
     .ql-bar:hover { transform: translateY(-3px) scale(1.01); }
-    .ql-bar::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .25s ease; }
+    .ql-bar::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .25s ease; z-index: 0; }
     .ql-bar:hover::before { opacity: 1; }
+    .ql-left, .ql-arrow { position: relative; z-index: 1; }
 
     /* Bar 1 – Webinar (dark petrol) */
     .ql-bar-1 { background: linear-gradient(110deg, var(--petrol) 0%, #0f3240 100%); box-shadow: 0 8px 32px rgba(27,80,96,.28), 0 1px 0 rgba(255,255,255,.06) inset; }
@@ -533,7 +534,7 @@
       <div>
         <div style="margin-bottom:28px;">
           <span class="label label-dark" style="color:var(--teal);">The Empowered CRNA</span>
-          <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.2vw,42px); font-weight:800; line-height:1.1; color:var(--text-primary); margin-top:8px;">This is what the CRNA community<br>is all about.</h2>
+          <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.2vw,42px); font-weight:800; line-height:1.1; color:var(--text-primary); margin-top:8px;">The resources no one<br>handed you in residency.</h2>
         </div>
         <div class="ql-grid">
 
