@@ -126,9 +126,11 @@
     .hero-badge .dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.35); } }
 
-    .hero-headline { margin-bottom: 22px; }
+    .hero-headline { margin-bottom: 22px; position: relative; min-height: 2.8em; }
     .hero-headline .accent { color: var(--teal); }
     .hero-headline .amber { color: var(--amber); }
+    .headline-slide { position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; pointer-events: none; }
+    .headline-slide.headline-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .hero-sub { font-size: clamp(16px, 1.5vw, 20px); color: var(--text-secondary); max-width: 480px; margin-bottom: 36px; line-height: 1.65; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
 
@@ -138,7 +140,7 @@
 
     /* ── HERO VISUAL ────────────────────────────── */
     .hero-visual { display: flex; flex-direction: column; align-items: center; gap: 0; position: relative; }
-    .founder-card { width: 100%; max-width: 360px; padding: 20px 20px 0; position: relative; }
+    .founder-card { width: 100%; max-width: 360px; padding: 20px; position: relative; }
     .founder-photo-wrap { width: 100%; aspect-ratio: 4/5; border-radius: var(--r-md); overflow: hidden; background: #ece9e5; position: relative; }
     .founder-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .founder-chip { position: absolute; bottom: 16px; left: 16px; right: 16px; padding: 12px 16px; background: rgba(27,80,96,.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 12px; border: 1px solid rgba(255,255,255,.15); }
@@ -146,7 +148,7 @@
     .founder-chip-role { font-size: 12px; color: rgba(255,255,255,.7); margin-top: 2px; }
 
     /* Inline pill badges below photo — NO absolute overflow */
-    .hero-badges-row { display: flex; gap: 10px; padding: 14px 20px 20px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 360px; }
+    .hero-badges-row { display: flex; flex-direction: column; gap: 10px; padding: 14px 20px 20px; width: 100%; max-width: 360px; }
     .hero-pill { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 100px; flex: 1; min-width: 140px; }
     .hero-pill-icon { width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
     .hero-pill-text { font-size: 13px; font-weight: 600; color: var(--text-primary); line-height: 1.2; }
@@ -223,11 +225,21 @@
     .ebook-topics li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text-secondary); }
     .ebook-check { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--petrol), var(--teal)); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-    .ebook-form-card { margin-top: 60px; padding: clamp(32px, 4vw, 52px); text-align: center; }
-    .ebook-form-card .label { display: block; }
-    .ebook-form-card .heading-md { margin-bottom: 8px; }
-    .ebook-form-card p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
-    @media (max-width: 760px) { .ebook-grid { grid-template-columns: 1fr; } .ebook-cover { order: -1; } }
+    .ebook-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 0; }
+    .ebook-left { display: flex; flex-direction: column; gap: 0; }
+    .ebook-left .sec-header-inline { margin-bottom: 32px; }
+    .ebook-left .sec-header-inline .label { display: inline-block; margin-bottom: 10px; }
+    .ebook-left .sec-header-inline .heading-lg { margin-bottom: 10px; }
+    .ebook-left .sec-header-inline .body-lg { margin-top: 0; }
+    .ebook-right { padding: clamp(28px, 3.5vw, 48px); }
+    .ebook-right .label { display: block; margin-bottom: 8px; }
+    .ebook-right .heading-md { margin-bottom: 8px; }
+    .ebook-right p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+    @media (max-width: 900px) {
+      .ebook-two-col { grid-template-columns: 1fr; gap: 48px; }
+      .ebook-grid { grid-template-columns: 1fr; }
+      .ebook-cover { order: -1; }
+    }
 
     /* ── WEBINAR ────────────────────────────────── */
     #webinar { background: var(--warm-white); }
@@ -269,19 +281,18 @@
 
     /* ── EVENTS ─────────────────────────────────── */
     #events { background: var(--warm-white); }
-    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 56px; }
-    .event-card { padding: 28px; transition: transform .25s; }
+    .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .event-card { padding: 0; transition: transform .25s; overflow: hidden; }
     .event-card:hover { transform: translateY(-4px); }
-    .event-date-chip { display: inline-flex; flex-direction: column; align-items: center; width: 50px; background: linear-gradient(135deg, var(--petrol), var(--teal)); border-radius: 12px; padding: 8px 0; color: white; margin-bottom: 18px; }
-    .event-month { font-size: 10px; font-weight: 700; letter-spacing: .1em; opacity: .85; text-transform: uppercase; }
-    .event-day { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 800; line-height: 1; }
-    .event-chip { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 10px; }
-    .chip-webinar { background: rgba(42,144,144,.1); color: var(--teal); }
-    .chip-live { background: rgba(232,168,48,.15); color: #9A6800; }
-    .chip-community { background: rgba(27,80,96,.1); color: var(--petrol); }
-    .event-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .event-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
-    .event-meta { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
+    .event-card-img { width: 100%; height: 190px; object-fit: cover; object-position: center; display: block; }
+    .event-card-body { padding: 24px 28px 28px; }
+    .event-chip { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 12px; }
+    .chip-conference { background: rgba(42,144,144,.12); color: var(--teal); }
+    .chip-symposium { background: rgba(232,168,48,.15); color: #9A6800; }
+    .event-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--petrol); }
+    .event-meta { display: flex; align-items: flex-start; gap: 7px; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.4; }
+    .event-meta svg { flex-shrink: 0; margin-top: 2px; }
+    .event-actions { margin-top: 20px; }
     @media (max-width: 760px) { .events-grid { grid-template-columns: 1fr; } }
 
     /* ── FOUNDER ────────────────────────────────── */
@@ -397,11 +408,10 @@
         <span class="dot" aria-hidden="true"></span>
         550+ CRNAs and growing
       </div>
-      <h1 class="heading-xl hero-headline">
-        You <span class="accent">Earned</span><br>
-        the Title.<br>
-        Now <span class="amber">Own</span><br>
-        the Outcome.
+      <h1 class="heading-xl hero-headline" id="hero-headline" aria-live="polite">
+        <span class="headline-slide headline-active">Just 56,000 CRNAs, Touching <span class="accent">80%</span> of American Lives. It's Time We <span class="amber">Take Care</span> of Us.</span>
+        <span class="headline-slide">Your Best Investment Isn't in the <span class="accent">OR</span>. It's <span class="amber">Outside</span> It.</span>
+        <span class="headline-slide">CRNAs Who Stop Trading <span class="accent">Time</span> for Income <span class="amber">Start Here</span>.</span>
       </h1>
       <p class="hero-sub">You put in the years. You hold the credential. The question is what you build with it — inside the OR and far beyond it.</p>
       <div class="hero-actions">
@@ -556,44 +566,39 @@
 <!-- ── EBOOK ─────────────────────────────────────── -->
 <section id="ebook" class="section" aria-labelledby="ebook-h">
   <div class="container">
-    <div class="sec-header">
-      <span class="label">Free Download</span>
-      <h2 id="ebook-h" class="heading-lg reveal">The CRNA Investor's<br>Blueprint</h2>
-      <p class="body-lg text-secondary reveal d1" style="margin-top:14px;">What 100+ CRNAs know about passive income that residency never taught you.</p>
-    </div>
+    <div class="ebook-two-col">
 
-    <div class="ebook-grid">
-      <div class="ebook-cover reveal">
-        <div class="book-3d">
-          <div class="book-3d-icon">📘</div>
-          <div class="book-3d-title">Multifamily Investing for CRNAs</div>
-          <div class="book-3d-sub">The Empowered CRNA · Free Guide</div>
+      <!-- Left: content -->
+      <div class="ebook-left reveal">
+        <div class="sec-header-inline">
+          <span class="label">Free Download</span>
+          <h2 id="ebook-h" class="heading-lg">The CRNA Investor's<br>Blueprint</h2>
+          <p class="body-lg text-secondary" style="margin-top:14px;">What 100+ CRNAs know about passive income that residency never taught you.</p>
         </div>
-        <div class="book-badge">Free</div>
+
+        <div class="ebook-content" style="margin-top:32px;">
+          <p class="body-md">CRNAs earn in the top 2% of US household income. Most still retire with a single income stream — their salary. This guide shows exactly how to change that, using strategies built around your W2, your schedule, and your risk tolerance.</p>
+          <ul class="ebook-topics" aria-label="What you will learn">
+            <li><div class="ebook-check" aria-hidden="true">✓</div><span>Why your W2 income is your single greatest investing asset — and how to leverage it before your peers figure this out</span></li>
+            <li><div class="ebook-check" aria-hidden="true">✓</div><span>The multifamily investment framework that Leslie used to go from CRNA to COO of a capital investment firm</span></li>
+            <li><div class="ebook-check" aria-hidden="true">✓</div><span>How to evaluate syndication deals in under 2 hours — without quitting your day job</span></li>
+            <li><div class="ebook-check" aria-hidden="true">✓</div><span>Tax strategies that high-income healthcare professionals almost never learn about until it's too late</span></li>
+            <li><div class="ebook-check" aria-hidden="true">✓</div><span>The first three steps to building passive income while you're still in the OR</span></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="ebook-content reveal d1">
-        <p class="body-md">CRNAs earn in the top 2% of US household income. Most still retire with a single income stream — their salary. This guide shows exactly how to change that, using strategies built around your W2, your schedule, and your risk tolerance.</p>
-        <ul class="ebook-topics" aria-label="What you will learn">
-          <li><div class="ebook-check" aria-hidden="true">✓</div><span>Why your W2 income is your single greatest investing asset — and how to leverage it before your peers figure this out</span></li>
-          <li><div class="ebook-check" aria-hidden="true">✓</div><span>The multifamily investment framework that Leslie used to go from CRNA to COO of a capital investment firm</span></li>
-          <li><div class="ebook-check" aria-hidden="true">✓</div><span>How to evaluate syndication deals in under 2 hours — without quitting your day job</span></li>
-          <li><div class="ebook-check" aria-hidden="true">✓</div><span>Tax strategies that high-income healthcare professionals almost never learn about until it's too late</span></li>
-          <li><div class="ebook-check" aria-hidden="true">✓</div><span>The first three steps to building passive income while you're still in the OR</span></li>
-        </ul>
-        <a href="#ebook-form-section" class="btn btn-amber">Download Free →</a>
+      <!-- Right: form -->
+      <div id="ebook-form-section" class="ebook-right glass reveal d1">
+        <span class="label">Instant Access</span>
+        <h3 class="heading-md">Download Your Free Copy</h3>
+        <p>Enter your details and get the guide immediately. No spam — ever.</p>
+        <div class="fc-wrap">
+          <div data-fc-seamless="true" data-fc-key="ae1f4fb4" style="width:100%;height:641.14px"></div>
+          <script src="https://app.formcrafts.com/embed.js"></script>
+        </div>
       </div>
-    </div>
 
-    <!-- eBook Download Form -->
-    <div id="ebook-form-section" class="ebook-form-card glass reveal" style="margin-top:60px;">
-      <span class="label">Instant Access</span>
-      <h3 class="heading-md" style="margin-bottom:8px;">Download Your Free Copy</h3>
-      <p>Enter your details and get the guide immediately. No spam — ever.</p>
-      <div class="fc-wrap">
-        <div data-fc-seamless="true" data-fc-key="ae1f4fb4" style="max-width:500px;height:641.14px"></div>
-        <script src="https://app.formcrafts.com/embed.js"></script>
-      </div>
     </div>
   </div>
 </section>
@@ -765,30 +770,47 @@
       <p class="body-lg text-secondary reveal d1" style="margin-top:14px;">Live sessions, workshops, and private events — exclusively for CRNAs building outside the OR.</p>
     </div>
     <div class="events-grid">
+
+      <!-- FANA Sand & Surf -->
       <article class="event-card glass reveal">
-        <div class="event-date-chip" aria-label="April 15"><span class="event-month">Apr</span><span class="event-day">15</span></div>
-        <div class="event-chip chip-webinar">Webinar</div>
-        <h3 class="event-title">Multifamily 101: Your First Deal</h3>
-        <p class="event-desc">A live walkthrough of underwriting your first multifamily acquisition — from market selection to closing. Real numbers, no glossing over.</p>
-        <div class="event-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>6:00 PM EST · Online</div>
-        <a href="https://learn.beyond9to5club.com/crna" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Reserve Seat</a>
+        <img src="assets/images/fana-sand-surf-2026.png" alt="FANA 2026 Sand & Surf Anesthesia Symposium banner" class="event-card-img" loading="lazy" />
+        <div class="event-card-body">
+          <div class="event-chip chip-symposium">Symposium</div>
+          <h3 class="event-title">FANA Sand &amp; Surf Anesthesia Symposium</h3>
+          <div class="event-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            April 10–12, 2026
+          </div>
+          <div class="event-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Signia by Hilton Orlando Bonnet Creek · Orlando, FL
+          </div>
+          <div class="event-actions">
+            <a href="https://www.fana.org/2026-sand-surf-symposium" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Learn More</a>
+          </div>
+        </div>
       </article>
+
+      <!-- AANA Annual Congress -->
       <article class="event-card glass reveal d1">
-        <div class="event-date-chip" aria-label="May 6"><span class="event-month">May</span><span class="event-day">06</span></div>
-        <div class="event-chip chip-live">Live Q&amp;A</div>
-        <h3 class="event-title">Ask Leslie Anything: Tax Strategy for CRNAs</h3>
-        <p class="event-desc">An open Q&A on tax reduction strategies used by high-income W2 professionals investing in real assets. Submit your questions in advance.</p>
-        <div class="event-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8:00 PM EST · Online</div>
-        <a href="#whatsapp" class="btn btn-outline btn-sm">Join to Attend</a>
+        <img src="assets/images/aana-congress-group.jpg" alt="AANA Annual Congress attendees" class="event-card-img" loading="lazy" />
+        <div class="event-card-body">
+          <div class="event-chip chip-conference">Conference</div>
+          <h3 class="event-title">AANA Annual Congress 2026</h3>
+          <div class="event-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            August 21–25, 2026
+          </div>
+          <div class="event-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Boston, Massachusetts
+          </div>
+          <div class="event-actions">
+            <a href="https://www.aana.com/premier-event/annual-congress/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Learn More</a>
+          </div>
+        </div>
       </article>
-      <article class="event-card glass reveal d2">
-        <div class="event-date-chip" aria-label="June 14"><span class="event-month">Jun</span><span class="event-day">14</span></div>
-        <div class="event-chip chip-community">Community</div>
-        <h3 class="event-title">Empowered CRNA Annual Meetup</h3>
-        <p class="event-desc">An in-person gathering for community members to connect, share wins, and learn from each other. Venue announced to members first.</p>
-        <div class="event-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>TBD · Members Only</div>
-        <a href="#whatsapp" class="btn btn-outline btn-sm">Join to Get Notified</a>
-      </article>
+
     </div>
   </div>
 </section>
@@ -959,6 +981,26 @@
   // Nav scroll
   const nav = document.getElementById('nav');
   const btt = document.getElementById('btt');
+  // Hero headline rotator
+  (function() {
+    const headline = document.getElementById('hero-headline');
+    const slides = headline ? headline.querySelectorAll('.headline-slide') : [];
+    let current = 0;
+    if (slides.length < 2) return;
+
+    // Set min-height to tallest slide so layout doesn't jump
+    slides.forEach(s => { s.style.position = 'relative'; });
+    const heights = Array.from(slides).map(s => s.offsetHeight);
+    slides.forEach(s => { s.style.position = ''; });
+    headline.style.minHeight = Math.max(...heights) + 'px';
+
+    setInterval(() => {
+      slides[current].classList.remove('headline-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('headline-active');
+    }, 4000);
+  })();
+
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
     btt.classList.toggle('visible', window.scrollY > 400);
