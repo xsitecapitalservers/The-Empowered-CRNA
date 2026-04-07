@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Registered — The Empowered CRNA Wealth Clinic</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --carbon:  #181e22;
+      --petrol:  #1B5060;
+      --teal:    #2A9090;
+      --teal-lt: #6dcfcf;
+      --amber:   #E8A830;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--carbon); color: #fff; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── HEADER ── */
+    header { position: fixed; top: 12px; left: 0; right: 0; z-index: 100; padding-inline: clamp(16px, 4vw, 48px); }
+    .nav-inner { max-width: 960px; margin-inline: auto; display: flex; align-items: center; justify-content: center; padding: 12px 28px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .nav-logo img { height: 28px; width: auto; max-width: 160px; display: block; }
+
+    /* ── HERO ── */
+    .hero { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px clamp(20px, 6vw, 80px) 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 55% at 80% 15%, rgba(42,144,144,.2) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 10% 90%, rgba(232,168,48,.14) 0%, transparent 55%), var(--carbon); }
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(42,144,144,.15); border: 1px solid rgba(42,144,144,.35); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 28px; }
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-lt); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 72px); font-weight: 700; line-height: 1.08; margin-bottom: 18px; color: #fff; }
+    .hero h1 .amber { color: var(--amber); }
+    .hero h1 .teal  { color: var(--teal-lt); }
+
+    .hero-sub { font-size: clamp(15px, 1.6vw, 19px); color: rgba(255,255,255,.6); max-width: 540px; margin-bottom: 16px; }
+
+    /* Event chip */
+    .event-chip { display: inline-flex; align-items: center; gap: 24px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 16px 28px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
+    .event-chip-item { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .event-chip-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    .event-chip-value { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--amber); }
+    .event-chip-divider { width: 1px; height: 36px; background: rgba(255,255,255,.12); }
+
+    /* CTA Buttons */
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 8px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 100px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: transform .2s, box-shadow .2s; border: none; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amber { background: var(--amber); color: var(--carbon); box-shadow: 0 4px 24px rgba(232,168,48,.4); }
+    .btn-amber:hover { box-shadow: 0 8px 32px rgba(232,168,48,.5); }
+    .btn-ghost { background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.2); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,.14); }
+    .btn-teal { background: linear-gradient(135deg, var(--petrol), var(--teal)); color: #fff; box-shadow: 0 4px 24px rgba(42,144,144,.35); }
+    .btn-teal:hover { box-shadow: 0 8px 32px rgba(42,144,144,.5); }
+
+    /* ── WHAT YOU'LL GAIN ── */
+    .gains-section { padding: clamp(64px, 8vw, 112px) clamp(20px, 6vw, 80px); max-width: 960px; margin-inline: auto; }
+    .section-label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 14px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 48px; }
+
+    .gains-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 640px) { .gains-grid { grid-template-columns: 1fr; } }
+
+    .gain-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px; transition: transform .25s; }
+    .gain-card:hover { transform: translateY(-4px); border-color: rgba(42,144,144,.3); }
+    .gain-icon { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--petrol), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; }
+    .gain-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--amber); margin-bottom: 8px; }
+    .gain-card p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.7; }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { padding: 0 clamp(20px, 6vw, 80px) clamp(64px, 8vw, 112px); max-width: 960px; margin-inline: auto; }
+    .how-band { background: linear-gradient(135deg, rgba(27,80,96,.6) 0%, rgba(26,74,90,.6) 100%); border: 1px solid rgba(42,144,144,.2); border-radius: 24px; padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 56px); display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .how-band .section-title { margin-bottom: 20px; }
+    .how-band p { font-size: 16px; color: rgba(255,255,255,.65); max-width: 540px; margin-bottom: 10px; line-height: 1.75; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { padding: 0 clamp(20px, 6vw, 80px) clamp(64px, 8vw, 112px); max-width: 960px; margin-inline: auto; }
+    .t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 700px) { .t-grid { grid-template-columns: 1fr; } }
+
+    .t-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .t-stars { color: var(--amber); font-size: 13px; letter-spacing: 2px; }
+    .t-quote { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,.75); line-height: 1.7; flex: 1; }
+    .t-author { display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,.25); border-radius: 12px; padding: 10px 14px; }
+    .t-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--petrol), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .t-name { font-size: 13px; font-weight: 700; color: #fff; }
+    .t-role { font-size: 11px; color: rgba(255,255,255,.45); }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta { margin: 0 clamp(20px, 5vw, 60px) clamp(64px, 8vw, 112px); background: linear-gradient(135deg, var(--petrol) 0%, #1a4a5a 100%); border-radius: 24px; padding: clamp(40px, 5vw, 64px) clamp(28px, 5vw, 60px); display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid rgba(42,144,144,.25); box-shadow: 0 20px 60px rgba(27,80,96,.35); position: relative; overflow: hidden; }
+    .bottom-cta::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(42,144,144,.2), transparent 70%); pointer-events: none; }
+    .bottom-cta > * { position: relative; z-index: 1; }
+    .bottom-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 44px); font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.15; }
+    .bottom-cta p { font-size: 15px; color: rgba(255,255,255,.65); max-width: 480px; margin-bottom: 30px; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid rgba(255,255,255,.08); text-align: center; padding: 28px 20px; font-size: 13px; color: rgba(255,255,255,.35); }
+    footer a { color: var(--teal-lt); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="nav-inner">
+      <a href="https://empowered-crna.onrender.com" aria-label="The Empowered CRNA" class="nav-logo">
+        <img src="assets/images/CRNA-LOGO-05@3x.png" alt="The Empowered CRNA logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge"><span class="dot" aria-hidden="true"></span>You're registered</div>
+    <h1>See You at the <span class="amber">Wealth Clinic,</span> <span class="teal">CRNA!</span></h1>
+    <p class="hero-sub">You're in. Every 3rd Tuesday, CRNAs across the country log in to grow, learn, and build — together.</p>
+
+    <div class="event-chip">
+      <div class="event-chip-item">
+        <span class="event-chip-label">When</span>
+        <span class="event-chip-value">Every 3rd Tuesday</span>
+      </div>
+      <div class="event-chip-divider"></div>
+      <div class="event-chip-item">
+        <span class="event-chip-label">Time</span>
+        <span class="event-chip-value">6:00 PM EST</span>
+      </div>
+      <div class="event-chip-divider"></div>
+      <div class="event-chip-item">
+        <span class="event-chip-label">Format</span>
+        <span class="event-chip-value">Online Webinar</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="https://empowered-crna.onrender.com" target="_blank" class="btn btn-ghost">← Back to Main Site</a>
+      <a href="https://empowered-crna.onrender.com/#whatsapp" target="_blank" class="btn btn-teal">Join the WhatsApp Community</a>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL GAIN -->
+  <section class="gains-section">
+    <span class="section-label">What to expect</span>
+    <h2 class="section-title">What You'll Actually Gain</h2>
+    <div class="gains-grid">
+      <div class="gain-card">
+        <div class="gain-icon">⚡</div>
+        <h3>Practical Strategies You Can Use Immediately</h3>
+        <p>Every session is designed around implementation — whether it's a tax deduction you didn't know about or a deal structure that fits your schedule.</p>
+      </div>
+      <div class="gain-card">
+        <div class="gain-icon">🤝</div>
+        <h3>A Community of Growth-Minded CRNAs</h3>
+        <p>You'll connect with CRNAs who are asking the same questions, facing the same challenges, and building real solutions together.</p>
+      </div>
+      <div class="gain-card">
+        <div class="gain-icon">🎥</div>
+        <h3>Access to All Session Recordings</h3>
+        <p>Life happens. Call shifts change. That's why every session is recorded and stored — so you never miss a thing, even on your busiest weeks.</p>
+      </div>
+      <div class="gain-card">
+        <div class="gain-icon">🎯</div>
+        <h3>Knowledge That Actually Applies to You</h3>
+        <p>Generic financial advice doesn't work for CRNAs with unpredictable schedules and high W-2 income. This is built specifically for your life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section">
+    <div class="how-band">
+      <span class="section-label">How it works</span>
+      <h2 class="section-title" style="margin-bottom:16px;">One Topic. 60–90 Minutes. Real Talk.</h2>
+      <p>Every third Tuesday, CRNAs from across the country log in. One topic. One focused conversation.</p>
+      <p>Some months we explore tax strategies that could save you tens of thousands. Other months it's career pivots, deal analysis, or business ownership. Always practical. Always relevant.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <span class="section-label">What CRNAs are saying</span>
+    <h2 class="section-title">Real Voices from the Community</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Wow!! I'm SO happy I got on zoom tonight with all the incredible leaders here. Is this being recorded? I need to watch it again!"</p>
+        <div class="t-author">
+          <div class="t-avatar">SB</div>
+          <div><div class="t-name">Sarah B., CRNA</div><div class="t-role">Webinar attendee</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Leslie's approach made multifamily investing finally make sense for someone with my schedule. I went from confused to confident."</p>
+        <div class="t-author">
+          <div class="t-avatar">SM</div>
+          <div><div class="t-name">Sarah M., CRNA</div><div class="t-role">First-time investor</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"As a fellow CRNA, Leslie understands our unique challenges. His tax strategies alone have saved me a whole lot. A 10/10 session."</p>
+        <div class="t-author">
+          <div class="t-avatar">MT</div>
+          <div><div class="t-name">Marcus T., CRNA</div><div class="t-role">12 years experience</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <span class="section-label">Don't wait until Tuesday</span>
+    <h2>Join the Private WhatsApp Community</h2>
+    <p>Connect with 550+ CRNAs between sessions. Real deal discussions, tax strategy conversations, and direct access to peers who've done it.</p>
+    <div class="hero-actions">
+      <a href="https://empowered-crna.onrender.com/#whatsapp" target="_blank" class="btn btn-amber">Join the WhatsApp Group →</a>
+      <a href="https://empowered-crna.onrender.com" target="_blank" class="btn btn-ghost">Explore the Site</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 The Empowered CRNA · <a href="https://empowered-crna.onrender.com">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>
