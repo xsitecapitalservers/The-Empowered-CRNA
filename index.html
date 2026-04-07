@@ -126,7 +126,7 @@
     .hero-badge .dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.35); } }
 
-    .hero-headline { margin-bottom: 22px; position: relative; min-height: 2.8em; }
+    .hero-headline { margin-bottom: 22px; }
     .hero-headline .accent { color: var(--teal); }
     .hero-headline .amber { color: var(--amber); }
     .headline-slide { position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; pointer-events: none; }
@@ -408,13 +408,11 @@
         <span class="dot" aria-hidden="true"></span>
         550+ CRNAs and growing
       </div>
-      <h1 class="heading-xl hero-headline" id="hero-headline" aria-live="polite">
-        <span class="headline-slide headline-active">Just 56,000 CRNAs, Touching <span class="accent">80%</span> of American Lives. It's Time We <span class="amber">Take Care</span> of Us.</span>
-        <span class="headline-slide">Your Best Investment Isn't in the <span class="accent">OR</span>. It's <span class="amber">Outside</span> It.</span>
-        <span class="headline-slide">CRNAs Who Stop Trading <span class="accent">Time</span> for Income <span class="amber">Start Here</span>.</span>
+      <h1 class="hero-headline" id="hero-headline" style="font-size:clamp(28px,4.2vw,58px);font-weight:800;line-height:1.08;letter-spacing:-0.01em;margin-bottom:22px;">
+        A mighty force of <span class="amber">56,000 CRNAs</span> safeguards <span class="accent">80% of American lives</span>. Now, it's time to <span class="amber">empower each other</span>.
       </h1>
       <p class="hero-sub">You put in the years. You hold the credential. The question is what you build with it — inside the OR and far beyond it.</p>
-      <div class="hero-actions">
+      <div class="hero-actions" style="margin-bottom:32px;">
         <a href="#ebook" class="btn btn-primary">Get the Free eBook</a>
         <a href="#webinar" class="btn btn-glass">Join the Webinar</a>
       </div>
@@ -491,9 +489,7 @@
           <span class="why-quote-mark" aria-hidden="true">"</span>
           <p class="why-quote-text">I spent 12 years mastering anesthesia. It took joining this community to realize I was leaving half my financial life on the table.</p>
           <footer class="why-author">
-            <div class="why-avatar">
-              <img src="assets/images/leslie-bio.jpg" alt="Community member" />
-            </div>
+            <div class="why-avatar" style="display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:14px;" aria-hidden="true">MR</div>
             <div>
               <div class="why-author-name">Michael R., CRNA</div>
               <div class="why-author-role">Community member since 2022</div>
@@ -873,10 +869,8 @@
         <h3>Apply for Access</h3>
         <p>Exclusively for Certified Registered Nurse Anesthetists. We verify credentials before granting access.</p>
         <div class="fc-wrap">
-          <!-- WhatsApp group form — replace with FormsCrafts embed when ready -->
-          <div style="min-height:120px;border-radius:12px;border:2px dashed rgba(27,80,96,.15);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;background:rgba(27,80,96,.02);">
-            WhatsApp application form coming soon
-          </div>
+          <div id="formflow-root" data-form="new-intake-form-zyyfuc"></div>
+          <script src="https://forms.xsitecapital.com/embed/v1.js" async></script>
         </div>
       </div>
     </div>
@@ -981,25 +975,6 @@
   // Nav scroll
   const nav = document.getElementById('nav');
   const btt = document.getElementById('btt');
-  // Hero headline rotator
-  (function() {
-    const headline = document.getElementById('hero-headline');
-    const slides = headline ? headline.querySelectorAll('.headline-slide') : [];
-    let current = 0;
-    if (slides.length < 2) return;
-
-    // Set min-height to tallest slide so layout doesn't jump
-    slides.forEach(s => { s.style.position = 'relative'; });
-    const heights = Array.from(slides).map(s => s.offsetHeight);
-    slides.forEach(s => { s.style.position = ''; });
-    headline.style.minHeight = Math.max(...heights) + 'px';
-
-    setInterval(() => {
-      slides[current].classList.remove('headline-active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('headline-active');
-    }, 4000);
-  })();
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
